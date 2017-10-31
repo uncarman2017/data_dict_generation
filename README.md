@@ -10,3 +10,6 @@
 
     $ git clone https://github.com/boser90/data_dict_generation.git
 
+需要授予root用户对table子目录授读写权限
+chmod 777 table
+chown -R root table

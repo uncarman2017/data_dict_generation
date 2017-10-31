@@ -34,6 +34,9 @@ date_default_timezone_set('Asia/Chongqing');
 $mysql_conn = mysqli_connect("{$database['DB_HOST']}", "{$database['DB_USER']}", "{$database['DB_PWD']}") or die("数据库连接失败");
 
 mysqli_select_db($mysql_conn, $database['DB_NAME']);
+//Add by Max Yu 2017-10-31
+mysqli_set_charset($mysql_conn, "utf8");
+setcookie('utf8', $database['DB_UTF8'], time() + 3600 * 24 * 7);
 
 $result = $mysql_conn->query('show tables');
 $mysql_conn->query('SET NAME UTF8');
